@@ -1,0 +1,8 @@
+sketching/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.git*
+.env
+.vscode/
