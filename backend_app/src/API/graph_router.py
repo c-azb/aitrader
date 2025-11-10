@@ -16,9 +16,9 @@ graph_router = APIRouter(
 
 @graph_router.post('')
 async def analyze_asset(user_input:AnalyseAssetModel):
-    llms = LLMs(researcher_llm=LLMs.get_default('agent2'),
-            charting_llm=LLMs.get_default('vision2'),
-            manager_llm=LLMs.get_default('manager2') )
+    llms = LLMs(researcher_llm=LLMs.get_default('agent'),
+            charting_llm=LLMs.get_default('vision'),
+            manager_llm=LLMs.get_default('manager') )
     main_graph = MainGraph(llms)
 
     initial_state = State.get_initial_state(f'Analyze {user_input.ticker_symbol}',user_input.ticker_symbol)

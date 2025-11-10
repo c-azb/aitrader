@@ -1,7 +1,7 @@
 
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 
-load_dotenv('C:/env/.env')
+# load_dotenv('C:/env/.env')
 
 from src.API import graph_router
 from fastapi import FastAPI

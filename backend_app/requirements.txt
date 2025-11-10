@@ -5,7 +5,7 @@ yfinance
 pandas_ta
 
 langchain-groq
-langchain-ollama
+# langchain-ollama
 
 langgraph
 langchain
