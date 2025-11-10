@@ -22,13 +22,17 @@ class _HomePageState extends State<HomePage> {
   String managerResponse = '';
   String chartImage = '';
 
+  final String baseEndpoint = "https://aitrader-gcr-639479216859.southamerica-east1.run.app"; //http://127.0.0.1:8000
+
   Future<void> testAPIConnection() async {
     try {
       final response = await http.get(
-      Uri.parse('http://127.0.0.1:8000')
+      Uri.parse(baseEndpoint)
     );
     if(response.statusCode != 200){
       showAlertDialog('Failed to connect to the AI...','Connection Error',context);
+    }else{
+      print("Successfully connected");
     }
     } catch (e) {
       showAlertDialog('Failed to connect to the AI...','Connection Error',context);
@@ -47,7 +51,7 @@ class _HomePageState extends State<HomePage> {
     myController.text = '';
 
     final response = await http.post(
-      Uri.parse('http://127.0.0.1:8000/trader_agent'),
+      Uri.parse('$baseEndpoint/trader_agent'),
       headers: {'Content-Type': 'application/json'},
       body: json.encode(data),
     );
@@ -70,7 +74,7 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
-    // testAPIConnection(context);
+    testAPIConnection();
   }
 
   
