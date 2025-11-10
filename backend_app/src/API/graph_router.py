@@ -3,7 +3,7 @@
 
 from fastapi import APIRouter,HTTPException
 from pydantic import BaseModel
-from src.MAIN_GRAPH.main_graph import MainGraph,LLMs,State
+
 
 class AnalyseAssetModel(BaseModel):
     # query:str
@@ -16,6 +16,8 @@ graph_router = APIRouter(
 
 @graph_router.post('')
 async def analyze_asset(user_input:AnalyseAssetModel):
+    from src.MAIN_GRAPH.main_graph import MainGraph,LLMs,State
+    
     llms = LLMs(researcher_llm=LLMs.get_default('agent'),
             charting_llm=LLMs.get_default('vision'),
             manager_llm=LLMs.get_default('manager') )
