@@ -1,0 +1,21 @@
+pandas
+matplotlib
+mplfinance
+yfinance
+pandas_ta
+
+langchain-groq
+langchain-ollama
+
+langgraph
+langchain
+langchain_community
+langchain-tavily
+
+fastapi
+uvicorn
+
+
+#Local tests requirements
+#langgraph-cli[inmem] #Needed for langgraph studio debugging
+#
